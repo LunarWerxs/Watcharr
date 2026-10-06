@@ -1,0 +1,24 @@
+{
+ "closed": null,
+ "def_hash": "fdf7bc0cd05d643a",
+ "id": "20261006-web-shipped-bytes-3d7f",
+ "idea": "Losslessly recompress og-image.png (fully opaque RGBA -> RGB, optimized deflate)",
+ "lane": "normal",
+ "metric": "web.shipped_bytes",
+ "opened": {
+  "at": "2026-10-06T11:05:56+00:00",
+  "by": "blogi",
+  "commit": "46d9250e09ab82b5d3a6432b4608a3af4e981be1",
+  "machine": "MPC-HELL"
+ },
+ "pass_line": null,
+ "predict": {
+  "expect": 24700.0,
+  "hi": 48000.0,
+  "lo": 12000.0,
+  "p_keep": 0.85
+ },
+ "probe_minutes": null,
+ "project": "imdbwatch",
+ "schema": "hydra-rsi-trial/1"
+}
