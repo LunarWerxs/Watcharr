@@ -1,0 +1,20 @@
+schema: hydra-rsi/1
+# Committed bytes at HEAD of what imdbwatch ships: the web app (source + public assets) and the Worker code.
+# Smaller means a lighter app for users and a leaner Worker; both are exact and independent of the working tree.
+metrics:
+  - id: web.shipped_bytes
+    kind: size
+    better: lower
+    unit: bytes
+    measure: "python scripts/rsi/shipped_bytes.py"
+    pick: 'web_bytes=(\d+)'
+    gate: exact
+    light: true
+  - id: worker.source_bytes
+    kind: size
+    better: lower
+    unit: bytes
+    measure: "python scripts/rsi/shipped_bytes.py"
+    pick: 'worker_bytes=(\d+)'
+    gate: exact
+    light: true
