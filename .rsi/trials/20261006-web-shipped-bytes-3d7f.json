@@ -1,5 +1,88 @@
 {
- "closed": null,
+ "closed": {
+  "a": {
+   "commit": "46d9250e09ab82b5d3a6432b4608a3af4e981be1",
+   "def_hash": "fdf7bc0cd05d643a",
+   "dirty": false,
+   "id": "m-20261006T110558-3ba843",
+   "load_after": 0.448,
+   "load_before": 0.408,
+   "machine": "MPC-HELL",
+   "metric": "web.shipped_bytes",
+   "project": "imdbwatch",
+   "reason": null,
+   "seconds": 0.283,
+   "settings": {
+    "gate": "exact",
+    "kind": "size",
+    "measure_files": {
+     "scripts/rsi/shipped_bytes.py": "66e8b7f765d0279af7b758b99fa86b370c52861e"
+    }
+   },
+   "started": "2026-10-06T11:05:58+00:00",
+   "status": "ok",
+   "value": 464909
+  },
+  "applies_if": "\\.png$",
+  "at": "2026-10-06T11:06:11+00:00",
+  "b": {
+   "commit": "56fdc433ee95c6d507747074e261cb3c875cd02a",
+   "def_hash": "fdf7bc0cd05d643a",
+   "dirty": false,
+   "id": "m-20261006T110606-402f8e",
+   "load_after": 0.551,
+   "load_before": 0.551,
+   "machine": "MPC-HELL",
+   "metric": "web.shipped_bytes",
+   "project": "imdbwatch",
+   "reason": null,
+   "seconds": 0.302,
+   "settings": {
+    "gate": "exact",
+    "kind": "size",
+    "measure_files": {
+     "scripts/rsi/shipped_bytes.py": "66e8b7f765d0279af7b758b99fa86b370c52861e"
+    }
+   },
+   "started": "2026-10-06T11:06:06+00:00",
+   "status": "ok",
+   "value": 440174
+  },
+  "guards": [
+   {
+    "a": 0,
+    "b": 0,
+    "declared": false,
+    "metric": "arkitect_gating_errors",
+    "state": "ok"
+   },
+   {
+    "a": 90,
+    "b": 90,
+    "declared": false,
+    "metric": "arkitect_warnings",
+    "state": "ok"
+   },
+   {
+    "a": 129,
+    "b": 129,
+    "declared": false,
+    "metric": "arkitect_no_data",
+    "state": "ok"
+   },
+   {
+    "a": 24,
+    "b": 24,
+    "declared": false,
+    "metric": "deps_total",
+    "state": "ok"
+   }
+  ],
+  "method": "exact: 464909 -> 440174",
+  "note": "og-image.png fully opaque: RGBA->RGB with optimized deflate, pixel-identical, 89500->64765 bytes",
+  "pattern": "Opaque RGBA PNGs: convert to RGB and optimize deflate",
+  "verdict": "kept"
+ },
  "def_hash": "fdf7bc0cd05d643a",
  "id": "20261006-web-shipped-bytes-3d7f",
  "idea": "Losslessly recompress og-image.png (fully opaque RGBA -> RGB, optimized deflate)",
