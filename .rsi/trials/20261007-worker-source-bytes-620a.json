@@ -1,5 +1,88 @@
 {
- "closed": null,
+ "closed": {
+  "a": {
+   "commit": "babe78b810bc7d214f530e8af71b40a0c3b49b7f",
+   "def_hash": "e5f45f2c5a062053",
+   "dirty": false,
+   "id": "m-20261007T111222-e0a954",
+   "load_after": 0.992,
+   "load_before": 0.982,
+   "machine": "MPC-HELL",
+   "metric": "worker.source_bytes",
+   "project": "imdbwatch",
+   "reason": null,
+   "seconds": 1.496,
+   "settings": {
+    "gate": "exact",
+    "kind": "size",
+    "measure_files": {
+     "scripts/rsi/shipped_bytes.py": "66e8b7f765d0279af7b758b99fa86b370c52861e"
+    }
+   },
+   "started": "2026-10-07T11:12:22+00:00",
+   "status": "ok",
+   "value": 131033
+  },
+  "applies_if": null,
+  "at": "2026-10-07T11:13:25+00:00",
+  "b": {
+   "commit": "69cbe7588575c1bfba444532ef3c207cb25bebd6",
+   "def_hash": "e5f45f2c5a062053",
+   "dirty": false,
+   "id": "m-20261007T111311-584639",
+   "load_after": 0.984,
+   "load_before": 1.0,
+   "machine": "MPC-HELL",
+   "metric": "worker.source_bytes",
+   "project": "imdbwatch",
+   "reason": null,
+   "seconds": 1.342,
+   "settings": {
+    "gate": "exact",
+    "kind": "size",
+    "measure_files": {
+     "scripts/rsi/shipped_bytes.py": "66e8b7f765d0279af7b758b99fa86b370c52861e"
+    }
+   },
+   "started": "2026-10-07T11:13:11+00:00",
+   "status": "ok",
+   "value": 131005
+  },
+  "guards": [
+   {
+    "a": 0,
+    "b": 0,
+    "declared": false,
+    "metric": "arkitect_gating_errors",
+    "state": "ok"
+   },
+   {
+    "a": 90,
+    "b": 90,
+    "declared": false,
+    "metric": "arkitect_warnings",
+    "state": "ok"
+   },
+   {
+    "a": 129,
+    "b": 129,
+    "declared": false,
+    "metric": "arkitect_no_data",
+    "state": "ok"
+   },
+   {
+    "a": 24,
+    "b": 24,
+    "declared": false,
+    "metric": "deps_total",
+    "state": "ok"
+   }
+  ],
+  "method": "exact: 131033 -> 131005",
+  "note": "Unexported 4 symbols no other file imports; 28 bytes smaller, tests pass",
+  "pattern": null,
+  "verdict": "kept"
+ },
  "def_hash": "e5f45f2c5a062053",
  "id": "20261007-worker-source-bytes-620a",
  "idea": "Drop the unused 'export' keyword from 4 symbols no other file imports",
