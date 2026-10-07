@@ -1,0 +1,24 @@
+{
+ "closed": null,
+ "def_hash": "e5f45f2c5a062053",
+ "id": "20261007-worker-source-bytes-620a",
+ "idea": "Drop the unused 'export' keyword from 4 symbols no other file imports",
+ "lane": "normal",
+ "metric": "worker.source_bytes",
+ "opened": {
+  "at": "2026-10-07T11:12:17+00:00",
+  "by": "blogi",
+  "commit": "babe78b810bc7d214f530e8af71b40a0c3b49b7f",
+  "machine": "MPC-HELL"
+ },
+ "pass_line": null,
+ "predict": {
+  "expect": 28.0,
+  "hi": 56.0,
+  "lo": 14.0,
+  "p_keep": 0.5
+ },
+ "probe_minutes": null,
+ "project": "imdbwatch",
+ "schema": "hydra-rsi-trial/1"
+}

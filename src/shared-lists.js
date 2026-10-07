@@ -45,9 +45,9 @@ import { requestSyncRun, requestSyncRunAfterResponse } from "./sync.js";
 
 // Every IMDb list in a shared list is read about every fifteen minutes, so the
 // limits keep one person from putting the sync job's whole run on their lists.
-export const MAX_OWNED_SHARED_LISTS = 10;
-export const MAX_SOURCES_PER_SHARED_LIST = 25;
-export const MAX_MEMBERS_PER_SHARED_LIST = 20;
+const MAX_OWNED_SHARED_LISTS = 10;
+const MAX_SOURCES_PER_SHARED_LIST = 25;
+const MAX_MEMBERS_PER_SHARED_LIST = 20;
 const NAME_MAX_LENGTH = 60;
 
 const INVITE_CODE = /^[a-f0-9]{32}$/;

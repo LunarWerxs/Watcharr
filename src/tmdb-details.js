@@ -36,7 +36,7 @@ function yearOf(date) {
 }
 
 /** The popup's shape for one title, or null when TMDB does not know the IMDb id. */
-export async function getTitleDetails(env, imdbId) {
+async function getTitleDetails(env, imdbId) {
   const found = await tmdbGet(env, `/find/${imdbId}`, { external_source: "imdb_id", language: "en-US" });
   const movie = found?.movie_results?.[0];
   const show = found?.tv_results?.[0];
