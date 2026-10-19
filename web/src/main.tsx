@@ -1,5 +1,6 @@
 import { createRoot, hydrateRoot } from 'react-dom/client'
 import './index.css'
+import '@cnct/connect/apps'
 import { Root } from './root.tsx'
 import { sendVisitPing } from '@/lib/analytics'
 import { inDemo } from '@/lib/demo-mode'

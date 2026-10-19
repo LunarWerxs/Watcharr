@@ -95,6 +95,18 @@
     --paper: #ffffff;
 }
 
+/* The Connections app switcher in the header (the header is always dark). */
+connections-apps {
+    --cnct-apps-surface: var(--popover);
+    --cnct-apps-card: var(--card);
+    --cnct-apps-text: var(--foreground);
+    --cnct-apps-muted: var(--muted-foreground);
+    --cnct-apps-mark: var(--foreground);
+    --cnct-apps-hover: var(--accent);
+    --cnct-apps-accent: var(--primary);
+    --cnct-apps-on-accent: var(--primary-foreground);
+}
+
 .dark {
     /* IMDb at night: #121212 ground, #1f1f1f panels, white type in three
        strengths, and the same yellow. No blue anywhere. */

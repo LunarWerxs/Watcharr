@@ -144,6 +144,14 @@ export function SiteHeader({
           </span>
           <GithubLink />
           <ThemeToggle />
+          {session?.authAvailable ? (
+            <connections-apps
+              signed-in={session.signedIn ? '' : 'false'}
+              current="watcharr"
+              sign-in-href={signInHref(listUrl || undefined)}
+              theme="dark"
+            />
+          ) : null}
           <AccountControl session={session} listUrl={listUrl} onSignIn={onSignIn} />
         </div>
       </div>
