@@ -19,7 +19,7 @@
 import { after, describe, test } from "node:test";
 import assert from "node:assert/strict";
 import { createRequire } from "node:module";
-import { mkdtemp, rm, writeFile } from "node:fs/promises";
+import { mkdir, mkdtemp, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
@@ -97,7 +97,9 @@ const require = createRequire(path.join(webRoot, "package.json"));
 const { build } = await import(pathToFileURL(require.resolve("vite")).href);
 
 // Inside web/node_modules so the externalised react/react-dom imports in the
-// bundle resolve, and out of the way of anything the repo tracks.
+// bundle resolve, and out of the way of anything the repo tracks. When npm hoists every web
+// dependency to the root, a clean `npm ci` leaves no web/node_modules, so it is made here.
+await mkdir(path.join(webRoot, "node_modules"), { recursive: true });
 const outDir = await mkdtemp(path.join(webRoot, "node_modules", ".tmp-app-probe-"));
 const entryPath = path.join(outDir, "entry.tsx");
 
