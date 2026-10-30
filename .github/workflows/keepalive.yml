@@ -1,0 +1,27 @@
+name: Keep the sync alive
+
+# GitHub turns off scheduled workflows in a public repository after 60 days with no
+# commits, and this storefront repo only gets a commit when the README changes. Without
+# this, the IMDb sync would stop on its own one quiet season. Enabling a workflow
+# through the API resets that clock, so do it weekly for the sync and for this job.
+on:
+  schedule:
+    - cron: "17 4 * * 1"
+  workflow_dispatch:
+
+permissions:
+  actions: write
+
+jobs:
+  keepalive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Re-enable the scheduled workflows
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for wf in sync-feeds.yml keepalive.yml; do
+            gh api -X PUT "repos/${{ github.repository }}/actions/workflows/$wf/enable"
+            echo "$wf enabled"
+          done

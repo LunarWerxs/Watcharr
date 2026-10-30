@@ -1,0 +1,77 @@
+name: Bug report
+description: Something in Watcharr is broken, slow or wrong.
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug. A list that will not read, a link that answers
+        wrongly, or a step that does not work are all useful. For a security problem, please do not
+        use this form; see [SECURITY.md](https://github.com/LunarWerxs/Watcharr/blob/main/.github/SECURITY.md).
+
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you see, and what did you expect to see instead?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: The steps, the IMDb list URL (if it is public), and the Radarr or Sonarr link you used.
+      placeholder: |
+        1. Paste https://www.imdb.com/list/... into the form
+        2. Copy the Radarr link
+        3. Add it to Radarr as a list
+    validations:
+      required: true
+
+  - type: dropdown
+    id: part
+    attributes:
+      label: Which part of Watcharr?
+      options:
+        - The paste form and the list page
+        - The Radarr and Sonarr links (the list API)
+        - The Radarr or Sonarr bookmark
+        - Sign-in, shared lists and auto-refresh
+        - The sync job (a list that will not update)
+        - Something else, or not sure
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: When it happened
+      description: "The date and rough time, so the matching sync run can be found. Add the IMDb list link if it is public."
+    validations:
+      required: true
+
+  - type: input
+    id: os
+    attributes:
+      label: Operating system
+      description: "For example Windows 11, macOS 15, Ubuntu 24.04, iOS 18 or Android 15."
+    validations:
+      required: true
+
+  - type: input
+    id: other
+    attributes:
+      label: Other software involved, and its version
+      description: "For example Radarr 5.x, Sonarr 4.x, or your browser and version."
+    validations:
+      required: false
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else?
+      description: Logs, screenshots or anything else that helps. Please remove private data first, such as API keys, session cookies, personal list URLs you do not want public, and email addresses.
+    validations:
+      required: false

@@ -1,0 +1,64 @@
+name: Sync feeds
+
+# IMDb blocks Cloudflare's egress, so the Worker cannot fetch its own data.
+# This runner does the fetching and pushes snapshots to the Worker's /api/ingest.
+on:
+  schedule:
+    # Every claimed feed plus the queue, every 15 minutes. Free on a public repo.
+    - cron: "*/15 * * * *"
+    # The queue alone (lists just pasted) in the five-minute gaps between, so a
+    # new list is read within about five minutes without a dispatch token. A run
+    # with an empty queue asks the Worker once and stops. GitHub delays scheduled
+    # runs under load, so treat both cadences as floors rather than a clock.
+    - cron: "5,10,20,25,35,40,50,55 * * * *"
+  # The Worker dispatches this with scope=requested when someone pastes a list,
+  # so a new list fills in about a minute instead of on the next tick. By hand,
+  # leave it on `all`.
+  workflow_dispatch:
+    inputs:
+      scope:
+        description: "all = every claimed feed plus the queue; requested = the queue only"
+        required: false
+        default: all
+        type: choice
+        options: [all, requested]
+
+concurrency:
+  # Snapshots are last-writer-wins per feed, so overlapping runs would just
+  # duplicate work. Never cancel a run in flight: it may be mid-ingest. A burst
+  # of dispatches collapses into one pending run, which is enough: every run
+  # reads the whole queue.
+  group: sync-feeds
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      # The code lives in the private LunarWerxs/Watcharr-private; this job stays in the
+      # public storefront repo because Actions minutes are free here. SOURCE_DEPLOY_KEY is
+      # a read-only deploy key on the private repo. Only schedule and dispatch run this
+      # job, never a fork's pull request, so the key never reaches outside code.
+      - name: Check out the private source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          repository: LunarWerxs/Watcharr-private
+          ref: main
+          ssh-key: ${{ secrets.SOURCE_DEPLOY_KEY }}
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 22
+
+      - name: Sync feeds from IMDb
+        env:
+          WORKER_ORIGIN: ${{ vars.WORKER_ORIGIN || 'https://watcharr.lunarwerx.com' }}
+          INGEST_SECRET: ${{ secrets.INGEST_SECRET }}
+          # The 15-minute schedule reads everything, the gaps between read the
+          # queue, and a dispatch says which it wants (by hand: all).
+          SYNC_SCOPE: ${{ github.event_name == 'schedule' && (github.event.schedule == '*/15 * * * *' && 'all' || 'requested') || github.event.inputs.scope || 'all' }}
+        run: node scripts/sync-feeds.mjs

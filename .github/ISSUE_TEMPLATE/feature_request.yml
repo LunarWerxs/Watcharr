@@ -1,0 +1,42 @@
+name: Feature request
+description: An idea for Watcharr, or something you wish it did.
+title: "[Idea] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Ideas are welcome. Tell us the situation you are in first; the idea itself can come second.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do?
+      description: Describe the situation and what gets in the way, not the solution you have in mind.
+      placeholder: "For example: my household shares one watchlist, and I want Sonarr to show shows from both of our lists."
+    validations:
+      required: true
+
+  - type: textarea
+    id: idea
+    attributes:
+      label: Your idea
+      description: What would you like Watcharr to do? A rough sketch is fine.
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Watcharr version
+      description: "Optional. The commit you run (git rev-parse --short HEAD in your copy), or the hosted site at watcharr.lunarwerx.com."
+    validations:
+      required: false
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else?
+      description: Screenshots or links that help. Please remove private data first, such as API keys and personal list URLs you do not want public.
+    validations:
+      required: false
