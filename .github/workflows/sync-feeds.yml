@@ -31,6 +31,9 @@ concurrency:
   group: sync-feeds
   cancel-in-progress: false
 
+# The job reads nothing from this repo and writes nothing anywhere: the token needs no rights.
+permissions: {}
+
 jobs:
   sync:
     runs-on: ubuntu-latest
@@ -41,11 +44,14 @@ jobs:
       # public storefront repo because Actions minutes are free here. SOURCE_DEPLOY_KEY is
       # a read-only deploy key on the private repo. Only schedule and dispatch run this
       # job, never a fork's pull request, so the key never reaches outside code.
+      # `production`, not `main`: only `npm run deploy` moves it, after the tests pass and
+      # the Worker is live, so the runner and the Worker it posts to are always the same
+      # tested commit and a push to main never reaches production sync on its own.
       - name: Check out the private source
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           repository: LunarWerxs/Watcharr-private
-          ref: main
+          ref: production
           ssh-key: ${{ secrets.SOURCE_DEPLOY_KEY }}
           persist-credentials: false
 

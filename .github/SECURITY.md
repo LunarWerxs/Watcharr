@@ -23,15 +23,15 @@ issue, so it can be fixed before it's disclosed:
 Please include:
 
 - what triggers it (the steps, request or list, or a link to it),
-- the **commit** you tested (`git rev-parse --short HEAD` in your copy) or say that you used the
-  hosted site at watcharr.lunarwerx.com, and
+- the behaviour you saw and the URL or feed link it happened on (the hosted site is
+  watcharr.lunarwerx.com), and
 - what you observed (what was reachable, leaked or changed).
 
 We'll acknowledge within a few days and keep you updated through to a fix.
 
 ## Supported versions
 
-Only the current code on the `main` branch is supported, so please pull it and confirm the issue
-still reproduces before reporting.
+Only the current hosted service at watcharr.lunarwerx.com is supported. The source code is private,
+so please check the issue still happens on the live site before reporting.
 
 Thank you for helping keep Watcharr users safe.
