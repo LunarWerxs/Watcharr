@@ -1,40 +1,39 @@
 <div align="center">
 
-<img alt="Pastearr: your IMDb list, straight into Radarr and Sonarr" src=".github/banner.png" width="880" />
+<img alt="Watcharr: your IMDb list, straight into Radarr and Sonarr" src=".github/banner.png" width="880" />
 
 ### Keep your list on IMDb. Radarr and Sonarr pick it up within minutes.
 
 Paste a public IMDb watchlist or list and get two links back: one Radarr checks every 15 minutes, one Sonarr checks every 5. Nothing to install, no account needed, free.
 
-[![Website](https://img.shields.io/badge/website-pastearr.lunarwerx.com-f5c518?style=flat-square)](https://pastearr.lunarwerx.com)
+[![Website](https://img.shields.io/badge/website-watcharr.lunarwerx.com-f5c518?style=flat-square)](https://watcharr.lunarwerx.com)
 [![Free](https://img.shields.io/badge/price-free-f5c518?style=flat-square)](#faq)
 [![Works with Radarr and Sonarr](https://img.shields.io/badge/works_with-Radarr_%26_Sonarr-f5c518?style=flat-square)](#set-it-up)
 [![Discord](https://img.shields.io/badge/Discord-join_the_community-5865F2?style=flat-square&logo=discord&logoColor=white)](https://discord.gg/PsWpeNUzhk)
 
-[**▶ Open Pastearr**](https://pastearr.lunarwerx.com) · [Features](#features) · [Set it up](#set-it-up) · [How it works](#how-it-works) · [FAQ](#faq)
+[**▶ Open Watcharr**](https://watcharr.lunarwerx.com) · [Features](#features) · [Set it up](#set-it-up) · [How it works](#how-it-works) · [FAQ](#faq)
 
 <br />
 
-<img src=".github/demo.gif" alt="Pastearr in motion: an IMDb list link pasted and generated, its two links and the Add to Radarr / Sonarr sticker appearing beside a fan of the list's covers, then a title's details opening" width="800" />
+<img src=".github/demo.gif" alt="Watcharr in motion: an IMDb list link pasted and generated, its two links and the Add to Radarr / Sonarr sticker appearing beside a fan of the list's covers, then a title's details opening" width="800" />
 
 </div>
 
 ---
 
-**Pastearr imports your IMDb watchlist into Radarr and Sonarr.** Sonarr dropped its built-in IMDb
+**Watcharr imports your IMDb watchlist into Radarr and Sonarr.** Sonarr dropped its built-in IMDb
 list import in 2025, and Radarr's IMDb list stopped working when IMDb changed its export format.
-Pastearr fills that gap. It reads a public IMDb watchlist or list through IMDb's own API and serves it
+Watcharr fills that gap. It reads a public IMDb watchlist or list through IMDb's own API and serves it
 back as two links: the movies for Radarr, the shows for Sonarr. Each app adds its link as a list of
 its own kind, so a movie or show you add on IMDb lands in Radarr or Sonarr, and from there in Plex,
 Jellyfin or Emby, within minutes. No Trakt account in the middle, no script to keep running, nothing
 to install.
 
-> **Pastearr (formerly Watcharr).** Same tool, new name since 2026-11-12. Links made on
-> `watcharr.lunarwerx.com` keep working exactly as before; new ones are made on pastearr.lunarwerx.com.
-> The old `LunarWerxs/Watcharr` and `LunarWerxs/IMDBWatcharr` addresses redirect here.
+> **IMDb Watcharr is now Watcharr.** Same tool, shorter name. Your Radarr and Sonarr links live on
+> watcharr.lunarwerx.com and keep working, and the old `LunarWerxs/IMDBWatcharr` address redirects here.
 >
 > Not to be confused with [sbondCo/Watcharr](https://github.com/sbondCo/Watcharr), a self-hosted
-> watched-list tracker. Pastearr syncs IMDb lists into Radarr and Sonarr.
+> watched-list tracker. This Watcharr syncs IMDb lists into Radarr and Sonarr.
 
 ## TL;DR
 
@@ -43,10 +42,10 @@ to install.
 - 🔖 &nbsp;**One-click setup.** Drag the **Add to Radarr / Sonarr** sticker to your bookmarks bar and click it inside Radarr or Sonarr. Your API key never leaves the app.
 - 🔁 &nbsp;**Links that never change.** They are built from the IMDb list's own id, so the same list always gives the same two links.
 - 🛟 &nbsp;**Never goes blank.** If a read of the list fails, both links keep serving the last good copy.
-- 🎟️ &nbsp;**No account to start.** Sign in only if you want the list re-read on its own, about every 15 minutes, or several lists combined into one pair of links. [See it signed in](https://pastearr.lunarwerx.com/?demo) without an account first.
+- 🎟️ &nbsp;**No account to start.** Sign in only if you want the list re-read on its own, about every 15 minutes, or several lists combined into one pair of links. [See it signed in](https://watcharr.lunarwerx.com/?demo) without an account first.
 - 💸 &nbsp;**Free.** No ads, no paywall, no paid tier.
 
-> **[Open pastearr.lunarwerx.com →](https://pastearr.lunarwerx.com)** Paste a list, copy two links, done.
+> **[Open watcharr.lunarwerx.com →](https://watcharr.lunarwerx.com)** Paste a list, copy two links, done.
 
 ---
 
@@ -59,7 +58,7 @@ to install.
 | 🔖 **Add to Radarr / Sonarr in one click** | A bookmark that runs inside your own Radarr or Sonarr, with that page's API key. It asks for a Quality Profile and Root Folder, adds the list with Search on Add on, swaps out an older RSS or Custom List of the same link, and reads it at once. Click it again to remove the list |
 | 🧭 **Watchlists and lists** | Any public watchlist or list, from the desktop site, the phone site (`m.imdb.com`) or IMDb's language paths (`imdb.com/de/list/…`) |
 | 🔁 **Links that never change** | Built from the IMDb list's id, so you set them up once and pasting the list again gives the same two links |
-| 📺 **Shows matched for Sonarr** | Sonarr adds shows by their TheTVDB id, which Pastearr finds through TVMaze and then TMDB. A show neither knows is left out rather than passed along broken, and the page lists which ones and why |
+| 📺 **Shows matched for Sonarr** | Sonarr adds shows by their TheTVDB id, which Watcharr finds through TVMaze and then TMDB. A show neither knows is left out rather than passed along broken, and the page lists which ones and why |
 | 🍿 **Covers and details** | The list's covers in a row, each opening TMDB's plot, genres, rating, backdrop and trailer, a View on IMDb link, and a Request with [Askarr](https://askarr.com) step |
 | 🔄 **Keeps itself current** | Sign in and the list is re-read about every 15 minutes. Your library shows every feed you follow, and a bell tells you when a list has failed three reads in a row |
 | 👪 **Shared lists** | One Radarr link and one Sonarr link for the whole house. Sign in, make a shared list, add as many IMDb lists as you like, and send the join link: everyone who joins adds their own watchlist. A title on two lists is added once |
@@ -78,7 +77,7 @@ to install.
 
 <table align="center">
   <tr>
-    <td align="center"><img src=".github/screenshots/phone-home.png" width="230" alt="Pastearr's home page on a phone: the headline, the IMDb link field and the Generate button" /></td>
+    <td align="center"><img src=".github/screenshots/phone-home.png" width="230" alt="Watcharr's home page on a phone: the headline, the IMDb link field and the Generate button" /></td>
     <td align="center"><img src=".github/screenshots/phone-result.png" width="230" alt="A generated list on a phone: its covers, counts, and the Radarr and Sonarr links with Copy buttons" /></td>
     <td align="center"><img src=".github/screenshots/phone-popup.png" width="230" alt="A title's details on a phone: The Incredible Hulk, its trailer, plot, and View on IMDb and Request with Askarr buttons" /></td>
   </tr>
@@ -97,7 +96,7 @@ to install.
 |---|---|
 | **Radarr's IMDb list import**, which broke when IMDb changed its export format | A link Radarr reads as its own list type, every 15 minutes |
 | **Sonarr's IMDb list import**, removed in 2025 | A link Sonarr reads as its own list type, every 5 minutes |
-| A **Trakt account** plus a **sync script** to keep running (Traktarr and friends) | Nothing to host and no second account: Pastearr reads IMDb's own API |
+| A **Trakt account** plus a **sync script** to keep running (Traktarr and friends) | Nothing to host and no second account: Watcharr reads IMDb's own API |
 | An **RSS List** or **Custom List** the apps read every 12 or 6 hours | The same link, read every 15 or 5 minutes |
 | **Copying titles by hand** every time the list changes | A link that follows the IMDb list as it changes |
 
@@ -108,11 +107,11 @@ Sonarr pick it up from there.
 
 ## ⭐ Like it? Help it grow
 
-Free, no ads, no paywall. If Pastearr saves you a chore, a few seconds goes a long way:
+Free, no ads, no paywall. If Watcharr saves you a chore, a few seconds goes a long way:
 
-- ⭐ **[Star the repo](https://github.com/LunarWerxs/Pastearr)**: the clearest signal that this is worth maintaining.
+- ⭐ **[Star the repo](https://github.com/LunarWerxs/Watcharr)**: the clearest signal that this is worth maintaining.
 - 💬 **[Join the Discord](https://discord.gg/PsWpeNUzhk)**: questions, ideas, and somewhere to shout when something breaks.
-- 🐛 **[Open an issue](https://github.com/LunarWerxs/Pastearr/issues)**: a list that will not read, a show that should have matched, a step that confused you.
+- 🐛 **[Open an issue](https://github.com/LunarWerxs/Watcharr/issues)**: a list that will not read, a show that should have matched, a step that confused you.
 
 ---
 
@@ -120,7 +119,7 @@ Free, no ads, no paywall. If Pastearr saves you a chore, a few seconds goes a lo
 
 ### 1. Make the links
 
-Open **[pastearr.lunarwerx.com](https://pastearr.lunarwerx.com)**, paste a public IMDb watchlist or
+Open **[watcharr.lunarwerx.com](https://watcharr.lunarwerx.com)**, paste a public IMDb watchlist or
 list, and press **Generate**. Both links come back at once and fill in on the list's first read from
 IMDb, usually within a few minutes. The page updates by itself when that lands.
 
@@ -159,20 +158,20 @@ The links are built from the IMDb id, so the same list always maps to the same t
 
 ```
                  paste a list                        every 15 / 5 minutes
-   you  ─────────────────────▶   Pastearr   ◀─────────────────────────  Radarr / Sonarr
+   you  ─────────────────────▶   Watcharr   ◀─────────────────────────  Radarr / Sonarr
                                      ▲
                                      │  snapshots
                               the sync job  ─────▶  IMDb's API
 ```
 
 - **IMDb is read on a schedule.** A sync job reads each list (a pasted one within about five
-  minutes, a followed one every 15) and hands the snapshot to Pastearr, which stores it and serves it.
+  minutes, a followed one every 15) and hands the snapshot to Watcharr, which stores it and serves it.
   It runs in this repository's Actions tab, so you can see every run.
 - **Each link is a tiny Radarr or Sonarr.** `{link}/api/v3/movie` answers as Radarr's movie list (by
   TMDB id) and `{link}/api/v3/series` as Sonarr's series list (by TVDB id), along with the pickers the
   list form asks for. Any API key is accepted, since the list is public anyway.
 - **The ids come from TMDB and TVMaze.** IMDb does not carry Radarr's TMDB ids or Sonarr's TVDB ids,
-  so Pastearr looks each title up once and carries the answer across reads.
+  so Watcharr looks each title up once and carries the answer across reads.
 - **An unchanged list is not rebuilt.** Each snapshot is fingerprinted, so a read that finds nothing
   new writes nothing.
 
@@ -203,7 +202,7 @@ The links are built from the IMDb id, so the same list always maps to the same t
   stays in the RSS answer only.
 - **Scheduled runs drift.** GitHub delays scheduled jobs under load, so 5 and 15 minutes are floors,
   not a clock.
-- **Personal use only.** IMDb's API forbids public and commercial use of its data, so Pastearr feeds
+- **Personal use only.** IMDb's API forbids public and commercial use of its data, so Watcharr feeds
   one household's Radarr and Sonarr, not a public index or a business.
 
 ---
@@ -211,12 +210,12 @@ The links are built from the IMDb id, so the same list always maps to the same t
 ## How it compares
 
 - **Trakt bridges** (Radarr's Trakt lists, Traktarr and similar) route an IMDb list through a
-  separate Trakt account, and often a script you host, before Radarr or Sonarr ever see it. Pastearr
+  separate Trakt account, and often a script you host, before Radarr or Sonarr ever see it. Watcharr
   reads IMDb directly: no Trakt account, nothing to host.
 - **[MDBList](https://mdblist.com)** is a general list aggregator that can also take an IMDb list and
-  hand it to Radarr or Sonarr, alongside Trakt, Rotten Tomatoes and other sources. Pastearr does one
+  hand it to Radarr or Sonarr, alongside Trakt, Rotten Tomatoes and other sources. Watcharr does one
   thing: your IMDb list, as Radarr's and Sonarr's own list type, with no account needed.
-- **Copying titles by hand** works once. Pastearr's links follow the list as it changes.
+- **Copying titles by hand** works once. Watcharr's links follow the list as it changes.
 
 ---
 
@@ -225,7 +224,7 @@ The links are built from the IMDb id, so the same list always maps to the same t
 <details>
 <summary><b>How do I import my IMDb watchlist into Radarr?</b></summary>
 
-Paste the watchlist's link into [pastearr.lunarwerx.com](https://pastearr.lunarwerx.com), copy the
+Paste the watchlist's link into [watcharr.lunarwerx.com](https://watcharr.lunarwerx.com), copy the
 Radarr link it gives you, and add it in Radarr under Settings → Lists → Add List → **Radarr**, with
 the link as the Full URL and anything as the API Key. Radarr reads it every 15 minutes from then on.
 
@@ -234,23 +233,23 @@ the link as the Full URL and anything as the API Key. Radarr reads it every 15 m
 <details>
 <summary><b>Sonarr removed IMDb lists. How do I get my IMDb shows into Sonarr now?</b></summary>
 
-The same way: paste the IMDb list or watchlist into Pastearr and add the Sonarr link under Settings →
+The same way: paste the IMDb list or watchlist into Watcharr and add the Sonarr link under Settings →
 Import Lists → Add List → **Sonarr**. Sonarr reads it every 5 minutes and adds each show by its
-TheTVDB id, which Pastearr looks up for you.
+TheTVDB id, which Watcharr looks up for you.
 
 </details>
 
 <details>
 <summary><b>My Radarr IMDb list stopped working. Is this the fix?</b></summary>
 
-Yes. Radarr's built-in IMDb list broke when IMDb changed its export format. Swap it for the Pastearr
+Yes. Radarr's built-in IMDb list broke when IMDb changed its export format. Swap it for the Watcharr
 link: same list, read every 15 minutes, as Radarr's own list type. The one-click bookmark even
 removes the old RSS or Custom List of the same link for you.
 
 </details>
 
 <details>
-<summary><b>Is Pastearr free?</b></summary>
+<summary><b>Is Watcharr free?</b></summary>
 
 Yes. Making links, using them and signing in are all free, with no paid tier and no payment set up
 anywhere.
@@ -269,7 +268,7 @@ staying on that first read.
 <details>
 <summary><b>Does it work with Plex, Jellyfin or Emby?</b></summary>
 
-Through Radarr and Sonarr, yes. Pastearr feeds your IMDb list to Radarr and Sonarr, and they fetch the
+Through Radarr and Sonarr, yes. Watcharr feeds your IMDb list to Radarr and Sonarr, and they fetch the
 titles into the library Plex, Jellyfin or Emby already reads. It works next to Overseerr, Jellyseerr,
 Prowlarr and the rest of the \*arr stack without touching them.
 
@@ -295,7 +294,7 @@ The bookmark talks only to the Radarr or Sonarr you clicked it in.
 <details>
 <summary><b>Why is a show missing from my Sonarr list?</b></summary>
 
-Sonarr needs a TheTVDB id for every show, and not every IMDb title has one. A show Pastearr cannot
+Sonarr needs a TheTVDB id for every show, and not every IMDb title has one. A show Watcharr cannot
 match is left out rather than passed along broken, and the page tells you which ones were skipped.
 
 </details>
@@ -310,9 +309,9 @@ probably private on IMDb: make it public and paste it again.
 </details>
 
 <details>
-<summary><b>Can I self-host Pastearr?</b></summary>
+<summary><b>Can I self-host Watcharr?</b></summary>
 
-Not any more. Pastearr is a hosted service at pastearr.lunarwerx.com, and its source code is private.
+Not any more. Watcharr is a hosted service at watcharr.lunarwerx.com, and its source code is private.
 Radarr and Sonarr reach it over the network, so nothing runs on your machine.
 
 </details>
@@ -331,7 +330,7 @@ Also by [LunarWerx](https://lunarwerx.com): [RepoYeti](https://repoyeti.com),
 
 ## License
 
-Pastearr is free to use at [pastearr.lunarwerx.com](https://pastearr.lunarwerx.com). Its source code
+Watcharr is free to use at [watcharr.lunarwerx.com](https://watcharr.lunarwerx.com). Its source code
 is private, copyright LunarWerx Studios. Copies of the code published here before 2026-10-30 keep the
 license they came with: [MIT](LICENSES/MIT-legacy.txt) up to commit `25bc710`, then
 [PolyForm Noncommercial 1.0.0](LICENSE). There is no commercial license for sale, because IMDb's API
