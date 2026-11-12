@@ -1,17 +1,17 @@
 <div align="center">
 
-<img alt="Watcharr: your IMDb list, straight into Radarr and Sonarr" src=".github/banner.png" width="880" />
+<img alt="IMDb Watcharr: your IMDb list, straight into Radarr and Sonarr" src=".github/banner.png" width="880" />
 
 ### Keep your list on IMDb. Radarr and Sonarr pick it up within minutes.
 
-Paste a public IMDb watchlist or list and get two links back: one Radarr checks every 15 minutes, one Sonarr checks every 5. Nothing to install, no account needed, free.
+**IMDb Watcharr is a free, hosted service.** Paste a public IMDb watchlist or list and get two links back: one Radarr checks every 15 minutes, one Sonarr checks every 5. Nothing to install and no account needed.
 
 [![Website](https://img.shields.io/badge/website-watcharr.lunarwerx.com-f5c518?style=flat-square)](https://watcharr.lunarwerx.com)
 [![Free](https://img.shields.io/badge/price-free-f5c518?style=flat-square)](#faq)
 [![Works with Radarr and Sonarr](https://img.shields.io/badge/works_with-Radarr_%26_Sonarr-f5c518?style=flat-square)](#set-it-up)
 [![Discord](https://img.shields.io/badge/Discord-join_the_community-5865F2?style=flat-square&logo=discord&logoColor=white)](https://discord.gg/PsWpeNUzhk)
 
-[**▶ Open Watcharr**](https://watcharr.lunarwerx.com) · [Features](#features) · [Set it up](#set-it-up) · [How it works](#how-it-works) · [FAQ](#faq)
+[**▶ Open IMDb Watcharr**](https://watcharr.lunarwerx.com) · [Features](#features) · [Set it up](#set-it-up) · [How it works](#how-it-works) · [FAQ](#faq)
 
 <br />
 
@@ -21,19 +21,15 @@ Paste a public IMDb watchlist or list and get two links back: one Radarr checks 
 
 ---
 
-**Watcharr imports your IMDb watchlist into Radarr and Sonarr.** Sonarr dropped its built-in IMDb
+**IMDb Watcharr imports your IMDb watchlist into Radarr and Sonarr.** Sonarr dropped its built-in IMDb
 list import in 2025, and Radarr's IMDb list stopped working when IMDb changed its export format.
-Watcharr fills that gap. It reads a public IMDb watchlist or list through IMDb's own API and serves it
+IMDb Watcharr fills that gap. It reads a public IMDb watchlist or list through IMDb's own API and serves it
 back as two links: the movies for Radarr, the shows for Sonarr. Each app adds its link as a list of
 its own kind, so a movie or show you add on IMDb lands in Radarr or Sonarr, and from there in Plex,
 Jellyfin or Emby, within minutes. No Trakt account in the middle, no script to keep running, nothing
 to install.
 
-> **IMDb Watcharr is now Watcharr.** Same tool, shorter name. Your Radarr and Sonarr links live on
-> watcharr.lunarwerx.com and keep working, and the old `LunarWerxs/IMDBWatcharr` address redirects here.
->
-> Not to be confused with [sbondCo/Watcharr](https://github.com/sbondCo/Watcharr), a self-hosted
-> watched-list tracker. This Watcharr syncs IMDb lists into Radarr and Sonarr.
+Not to be confused with [sbondCo/Watcharr](https://github.com/sbondCo/Watcharr), a self-hosted watched-list tracker. IMDb Watcharr is a separate project that syncs IMDb lists into Radarr and Sonarr.
 
 ## TL;DR
 
