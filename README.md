@@ -53,6 +53,8 @@ Not to be confused with [sbondCo/Watcharr](https://github.com/sbondCo/Watcharr),
 | ⏱️ **Radarr's and Sonarr's own list type** | Each link answers as a small Radarr or Sonarr v3 API, so the apps read it like another Radarr or Sonarr: every 15 and every 5 minutes. The same links still work as an RSS List and a Custom List |
 | 🔖 **Add to Radarr / Sonarr in one click** | A bookmark that runs inside your own Radarr or Sonarr, with that page's API key. It asks for a Quality Profile and Root Folder, adds the list with Search on Add on, swaps out an older RSS or Custom List of the same link, and reads it at once. Click it again to remove the list |
 | 🧭 **Watchlists, lists and ratings** | Any public watchlist, list or ratings page, from the desktop site, the phone site (`m.imdb.com`) or IMDb's language paths (`imdb.com/de/list/…`) |
+| ⭐ **Ratings keep their scores** | A ratings page's links carry each title's score out of 10: in the RSS, on each title Radarr and Sonarr read, and as tags `imdb-rated-1` to `imdb-rated-10`, so a list can be split by score with the app's own Tags filter |
+| 🔗 **One combined link** | The link icon beside a list's name copies one link with every title, movies and shows together, with their ids, scores or dates added: for an AI or a script, not for the apps |
 | 🔁 **Links that never change** | Built from the IMDb list's id, so you set them up once and pasting the list again gives the same two links |
 | 📺 **Shows matched for Sonarr** | Sonarr adds shows by their TheTVDB id, which Watcharr finds through TVMaze and then TMDB. A show neither knows is left out rather than passed along broken, and the page lists which ones and why |
 | 🍿 **Covers and details** | The list's covers in a row, each opening TMDB's plot, genres, rating, backdrop and trailer, a View on IMDb link, and a Request with [Askarr](https://askarr.com) step |
@@ -167,6 +169,13 @@ The links are built from the IMDb id, so the same list always maps to the same t
 - **Each link is a tiny Radarr or Sonarr.** `{link}/api/v3/movie` answers as Radarr's movie list (by
   TMDB id) and `{link}/api/v3/series` as Sonarr's series list (by TVDB id), along with the pickers the
   list form asks for. Any API key is accepted, since the list is public anyway.
+- **A ratings page passes its scores on.** Each title on a ratings link carries the score its
+  person gave it (`imdbUserRating: 9` and `tags: [9]` in the v3 lists, `User rating: 9/10` in the
+  RSS), and the link's tag picker offers `imdb-rated-1` to `imdb-rated-10`. A list or watchlist
+  carries none, and nothing about it changed.
+- **The combined link** (`…/all/l/ls055592025`, and `/all/p/…`, `/all/r/…`) answers every title as
+  one JSON document: the list, both app links, and per title its IMDb id, TMDB and TVDB ids, the app
+  it goes to, and its score or date added. Neither app reads it; it is there to paste to an AI.
 - **The ids come from TMDB and TVMaze.** IMDb does not carry Radarr's TMDB ids or Sonarr's TVDB ids,
   so Watcharr looks each title up once and carries the answer across reads.
 - **An unchanged list is not rebuilt.** Each snapshot is fingerprinted, so a read that finds nothing
