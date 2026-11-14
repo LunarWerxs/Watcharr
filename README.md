@@ -4,7 +4,7 @@
 
 ### Keep your list on IMDb. Radarr and Sonarr pick it up within minutes.
 
-**IMDb Watcharr is a free, hosted service.** Paste a public IMDb watchlist or list and get two links back: one Radarr checks every 15 minutes, one Sonarr checks every 5. Nothing to install and no account needed.
+**IMDb Watcharr is a free, hosted service.** Paste a public IMDb watchlist, list or ratings page and get two links back: one Radarr checks every 15 minutes, one Sonarr checks every 5. Nothing to install and no account needed.
 
 [![Website](https://img.shields.io/badge/website-watcharr.lunarwerx.com-f5c518?style=flat-square)](https://watcharr.lunarwerx.com)
 [![Free](https://img.shields.io/badge/price-free-f5c518?style=flat-square)](#faq)
@@ -23,7 +23,7 @@
 
 **IMDb Watcharr imports your IMDb watchlist into Radarr and Sonarr.** Sonarr dropped its built-in IMDb
 list import in 2025, and Radarr's IMDb list stopped working when IMDb changed its export format.
-IMDb Watcharr fills that gap. It reads a public IMDb watchlist or list through IMDb's own API and serves it
+IMDb Watcharr fills that gap. It reads a public IMDb watchlist, list or ratings page through IMDb's own API and serves it
 back as two links: the movies for Radarr, the shows for Sonarr. Each app adds its link as a list of
 its own kind, so a movie or show you add on IMDb lands in Radarr or Sonarr, and from there in Plex,
 Jellyfin or Emby, within minutes. No Trakt account in the middle, no script to keep running, nothing
@@ -52,7 +52,7 @@ Not to be confused with [sbondCo/Watcharr](https://github.com/sbondCo/Watcharr),
 | 🎬 **Movies to Radarr, shows to Sonarr** | One IMDb list splits in two: movies and TV movies for Radarr, series and mini-series for Sonarr. The page counts each before you copy anything |
 | ⏱️ **Radarr's and Sonarr's own list type** | Each link answers as a small Radarr or Sonarr v3 API, so the apps read it like another Radarr or Sonarr: every 15 and every 5 minutes. The same links still work as an RSS List and a Custom List |
 | 🔖 **Add to Radarr / Sonarr in one click** | A bookmark that runs inside your own Radarr or Sonarr, with that page's API key. It asks for a Quality Profile and Root Folder, adds the list with Search on Add on, swaps out an older RSS or Custom List of the same link, and reads it at once. Click it again to remove the list |
-| 🧭 **Watchlists and lists** | Any public watchlist or list, from the desktop site, the phone site (`m.imdb.com`) or IMDb's language paths (`imdb.com/de/list/…`) |
+| 🧭 **Watchlists, lists and ratings** | Any public watchlist, list or ratings page, from the desktop site, the phone site (`m.imdb.com`) or IMDb's language paths (`imdb.com/de/list/…`) |
 | 🔁 **Links that never change** | Built from the IMDb list's id, so you set them up once and pasting the list again gives the same two links |
 | 📺 **Shows matched for Sonarr** | Sonarr adds shows by their TheTVDB id, which Watcharr finds through TVMaze and then TMDB. A show neither knows is left out rather than passed along broken, and the page lists which ones and why |
 | 🍿 **Covers and details** | The list's covers in a row, each opening TMDB's plot, genres, rating, backdrop and trailer, a View on IMDb link, and a Request with [Askarr](https://askarr.com) step |
@@ -115,8 +115,8 @@ Free, no ads, no paywall. If Watcharr saves you a chore, a few seconds goes a lo
 
 ### 1. Make the links
 
-Open **[watcharr.lunarwerx.com](https://watcharr.lunarwerx.com)**, paste a public IMDb watchlist or
-list, and press **Generate**. Both links come back at once and fill in on the list's first read from
+Open **[watcharr.lunarwerx.com](https://watcharr.lunarwerx.com)**, paste a public IMDb watchlist,
+list or ratings page, and press **Generate**. Both links come back at once and fill in on the list's first read from
 IMDb, usually within a few minutes. The page updates by itself when that lands.
 
 A private list cannot be read. If yours is private, make it public on IMDb and paste it again.
@@ -147,6 +147,7 @@ The links are built from the IMDb id, so the same list always maps to the same t
 |---|---|
 | A list: `imdb.com/list/ls055592025/` | `…/radarr/l/ls055592025`<br>`…/sonarr/l/ls055592025` |
 | A watchlist: `imdb.com/user/p.kdbeq6dtmzzpiin4k7t4fnunf4/watchlist/` | `…/radarr/p/p.kdbeq6dtmzzpiin4k7t4fnunf4`<br>`…/sonarr/p/p.kdbeq6dtmzzpiin4k7t4fnunf4` |
+| Ratings: `imdb.com/user/p.kdbeq6dtmzzpiin4k7t4fnunf4/ratings/` | `…/radarr/r/p.kdbeq6dtmzzpiin4k7t4fnunf4`<br>`…/sonarr/r/p.kdbeq6dtmzzpiin4k7t4fnunf4` |
 
 ---
 
